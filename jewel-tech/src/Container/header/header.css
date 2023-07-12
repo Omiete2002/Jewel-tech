@@ -1,0 +1,12 @@
+.header {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header h2 {
+  margin-top: 10rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 40px;
+}

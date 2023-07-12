@@ -1,0 +1,17 @@
+.aboutus {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.aboutus__contents {
+  margin-right: 2rem;
+}
+
+.aboutus__contents h2 {
+  margin-bottom: 1rem;
+}
+
+.aboutus__contents p {
+  max-width: 485px;
+}
