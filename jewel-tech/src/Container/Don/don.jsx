@@ -1,13 +1,19 @@
 import React from 'react'
 import { BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
-import Product from '../../components/products/product';
-import Don1 from '../../Assets/DON 1.jpg';
-import Don2 from '../../Assets/DON 2.jpg';
+// import { Don } from '../../components/products/product';
+import { Data } from '../../Constants/Index';
 import './don.css';
 
-const productImages = [ Don1, Don2, Don1, Don2, Don1, Don2 ]
-
+const DonCard = ({ don: { imgUrl, title, price }})  => {
+  return (
+    <div className='product'>
+        <img src={imgUrl} alt="product" />
+        <h3>{title}</h3>
+        <p>{price}</p>
+    </div>
+  )
+}
 
 const Don = () => {
   const scrollRef = React.useRef(null);
@@ -28,16 +34,14 @@ const Don = () => {
         <h2>PRODUCTS</h2>
         <p> Browse the collection of our best selling and top interesting products.<br />
           You’ll definitely find what you are looking for.</p>
+        <h1>DON</h1>
       </div>
 
         <div className="don__products">
           <div className="don__products-swiper" ref={scrollRef}>
-            {productImages.map((image, index) => (
-              <div className="don__products-images" key={`product_image-${index + 1}`} >
-                <img src={Don1} alt="product" />
-                <h3>DON 1</h3>
-                <p>₦150,000</p>
-                {/* <Product Img={Don1} title="DON1" price="₦150,000" /> */}
+            {Data.don.map((don) => (
+              <div className="don__products-images" >
+                <DonCard don={don} key={don.title} />
               </div>
             ))}
           </div>
@@ -46,8 +50,6 @@ const Don = () => {
             <BsArrowRightShort className='products_arrow-icons' onClick={() => scroll('right')} />
           </div>
         </div>
-
-
     </div>
   )
 }

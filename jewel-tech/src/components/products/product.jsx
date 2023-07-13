@@ -1,13 +1,35 @@
 import React from 'react'
 
-const product = ( {Img, title, price} ) => {
+import { Images, Data } from '../../Constants/Index';
+
+const Don = ({ don: { imgUrl, title, price }}) => {
   return (
     <div product>
-        <img src={Img} alt="product" />
+        <img src={imgUrl} alt="product" />
         <h3>{title}</h3>
         <p>{price}</p>
     </div>
   )
 }
 
-export default product;
+const woko = ({ woko: { imgUrl, title, price }}) => {
+  return (
+    <div product>
+        <img src={imgUrl} alt="product" />
+        <h3>{title}</h3>
+        <p>{price}</p>
+    </div>
+  )
+}
+
+const etibo = ({ etibo: { imgUrl, title, price }}) => {
+  return (
+    <div product>
+        <img src={imgUrl} alt="product" />
+        <h3>{title}</h3>
+        <p>{price}</p>
+    </div>
+  )
+}
+
+export default { Don, woko, etibo };
